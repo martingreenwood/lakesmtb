@@ -1,0 +1,44 @@
+
+.header {
+	background-color: $brand-primary;
+	@include rem(padding, 20px);
+
+	.site-branding {
+		@include media ($large-screen-up) {
+			@include span-columns(5);
+		}
+	}
+
+	#header-banner {
+		@include media ($large-screen-up) {
+			@include span-columns(7);
+		}
+	}
+}
+
+.menu {
+	background-color: #202020;
+	padding: 10px 0;
+
+	#site-navigation {
+
+		#primary-menu {
+			padding-top: 0;
+
+				li {
+					@include rem(padding, 0 25px);
+
+					&:first-child {
+						padding-left: 0;
+					}
+
+					a {
+						color: $white;
+						text-transform: uppercase;
+						font-weight: 700;
+    					@include rem(font-size, 14px);
+					}
+				}
+		}
+	}
+}

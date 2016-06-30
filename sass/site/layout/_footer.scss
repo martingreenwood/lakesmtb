@@ -1,0 +1,83 @@
+
+#colophon {
+	background-color: $brand-primary;
+
+	h3, p, li, a {
+		color: $white;
+	}
+
+	h3 {
+		@include rem(font-size, 18px);
+	}
+
+	ul {
+		list-style: none;
+		margin-left: 0;
+		@include rem(margin-top, 30px);
+	}
+
+	.social, .footer-menu, .info, .sign-up {
+		@include media ($large-screen-up) {
+			@include span-columns(3);
+			@include rem(padding, 30px 0);
+		}
+	}
+
+	.social {
+
+		li {
+			@include rem(margin, 15px 0);
+			.fa {
+				width: 15px;
+				@include rem(margin-right, 25px);
+			}
+		}
+	}
+
+	.footer-menu {
+		#menu-footer-menu {
+			background-color: inherit;
+			padding: 0;
+		}
+	}
+
+	.footer-menu, .info {
+		li {
+			@include rem(margin, 10px 0);
+		}
+	}
+
+	.sign-up {
+		margin-right: 0;
+
+		p {
+			@include rem(margin-top, 30px);
+		}
+
+		#mc_embed_signup {
+			 
+			input#mce-EMAIL {
+			    width: 75%;
+			    float: left;
+			    border-radius: 0;
+			} 
+
+			input#mc-embedded-subscribe {
+				width: 25%;
+				float: left;
+				@include rem(padding, 10px);
+				color: $white;
+				border: none;
+			}
+		}
+	}
+
+	.site-info {
+		display: inline-block;
+		width: 100%;
+
+		p {
+			text-align: center;
+		}
+	}
+}

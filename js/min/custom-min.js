@@ -1,0 +1,1 @@
+var $j=jQuery;$j(document).ready(function(){$j(".slides").slick({slidesToShow:1,slidesToScroll:1,autoplay:!0,autoplaySpeed:7e3,nextArrow:'<i class="fa fa-chevron-right"></i>',prevArrow:'<i class="fa fa-chevron-left"></i>'})});
