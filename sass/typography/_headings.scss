@@ -1,16 +1,19 @@
 h1, h2, h3, h4, h5, h6 {
 	clear: both;
 	color: #231f20;
+	font-weight: 400;
+}
+
+h4 {
+	@include rem(font-size, 20px);
 }
 
 h3 {
 	@include rem(font-size, 23px);
 	text-transform: uppercase;
-	font-weight: 400;
 }
 
 h2 {
 	text-transform: uppercase;
 	@include rem(font-size, 28px);
-	font-weight: 400;
 }

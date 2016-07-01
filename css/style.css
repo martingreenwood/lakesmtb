@@ -435,22 +435,19 @@ textarea {
 
 h1, h2, h3, h4, h5, h6 {
   clear: both;
-  color: #231f20;
-  font-weight: 400; }
-
-h4 {
-  font-size: 20px;
-  font-size: 2rem; }
+  color: #231f20; }
 
 h3 {
   font-size: 23px;
   font-size: 2.3rem;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  font-weight: 400; }
 
 h2 {
   text-transform: uppercase;
   font-size: 28px;
-  font-size: 2.8rem; }
+  font-size: 2.8rem;
+  font-weight: 400; }
 
 html {
   font-size: 62.5%; }
@@ -1141,40 +1138,6 @@ a {
   padding: 5rem 0; }
   #main #route-search h2, #main #route-search p {
     text-align: center; }
-#main #route-results {
-  padding: 50px 0;
-  padding: 5rem 0; }
-  @media screen and (min-width: 960px) {
-    #main #route-results .single-route {
-      float: left;
-      display: block;
-      margin-right: 2.1276595745%;
-      width: 23.4042553191%; }
-      #main #route-results .single-route:last-child {
-        margin-right: 0; }
-      #main #route-results .single-route .route-hover {
-        position: relative; }
-        #main #route-results .single-route .route-hover .overlay {
-          position: absolute;
-          width: 100%;
-          height: 100%;
-          background-color: rgba(0, 0, 0, 0.6);
-          opacity: 0;
-          transition: all 300ms ease-in-out; }
-          #main #route-results .single-route .route-hover .overlay:hover {
-            opacity: 1; }
-          #main #route-results .single-route .route-hover .overlay h3 {
-            text-align: center;
-            color: #fff; } }
-  #main #route-results .single-route .stat-one {
-    float: left; }
-  #main #route-results .single-route .stat-two {
-    float: right; }
-  #main #route-results .single-route .tags {
-    float: left; }
-    #main #route-results .single-route .tags a {
-      font-style: italic;
-      color: #808285; }
 
 /*--------------------------------------------------------------
 ## Asides

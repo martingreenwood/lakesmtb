@@ -28,7 +28,41 @@
 		wp_reset_query(); ?>
 	</div>
 
-	
+	<section id="route-search">
+		<div class="container">
+			<h2><?php the_title(); ?></h2>
+			<p><?php the_content(); ?></p>
+		</div>
+	</section>
+
+	<section id="route-results">
+		<div class="container">
+			<div class="row">
+				<?php
+						$args = array( 'post_type' => 'routes', 'posts_per_page' => 4 );
+						$loop = new WP_Query( $args );
+							while ( $loop->have_posts() ) : $loop->the_post(); ?>
+								<div class='single-route'>
+									<h4><?php the_title(); ?></h4>
+									<div class="route-hover">
+										<div class="overlay">
+					                		<div class="table"><div class="cell middle">
+						                		<a href="<?php the_permalink(); ?>"><h3>View Full Route</h3></a>
+						                	</div></div>
+						                </div>
+					                	<?php the_post_thumbnail('route-square'); ?>
+					                </div>
+					  				<div class="stat-one"><p>Dst: <?php the_field('distance')?> miles</p></div>
+						  			<div class="stat-two"><p>Elevation (ft): <?php the_field('elevation')?></p></div>
+					  				<div class="tags"><?php the_tags(); ?></div>
+					  			</div>
+					<?php endwhile;
+					wp_reset_query(); ?>
+			</div>
+		</div>
+	</section>
+
+
 
 	<section id="lakes-routes">
 		<div class="container">

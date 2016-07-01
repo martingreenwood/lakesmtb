@@ -43,8 +43,9 @@ function lakesmtb_setup() {
 	add_theme_support( 'post-thumbnails' );
 	add_image_size( 'banner', 728, 90, true ); // Banner Image
 	add_image_size( 'slider', 1600, 581, true ); // Slider Image
-	add_image_size( 'shot-week', 415, 287, true ); // Shot of the Week
+	add_image_size( 'shot-week', 382, 255, true ); // Shot of the Week
 	add_image_size( 'article', 633, 281, true ); // Article Preview
+	add_image_size( 'route-square', 560, 560, true ); // Shot of the Week
 
 
 	add_theme_support( 'custom-logo' );
