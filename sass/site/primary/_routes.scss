@@ -19,6 +19,11 @@
 
 		.single-route {
 
+			.gpx-link {
+				@include rem(font-size, 13px);
+				
+			}
+
 			@include media ($large-screen-up) {
 				@include span-columns(3);
 

@@ -44,6 +44,21 @@
 							while ( $loop->have_posts() ) : $loop->the_post(); ?>
 								<div class='single-route'>
 									<h4><?php the_title(); ?></h4>
+									<p class="gpx-link">
+										<?php 
+
+										$file = get_field('gpx_download');
+
+										if( $file ): 
+
+											// vars
+											$url = $file['url']; ?>
+
+											<a href="<?php echo $url; ?>" download>Download GPX file</a>
+
+										<?php endif; ?>
+									</p>
+
 									<div class="route-hover">
 										<div class="overlay">
 					                		<div class="table"><div class="cell middle">
@@ -61,36 +76,6 @@
 			</div>
 		</div>
 	</section>
-
-
-
-	<section id="lakes-routes">
-		<div class="container">
-			<div class="row">
-				<div class="routes-intro">
-					<h2>Lake District Routes - #bikeparklakes</h2>
-					<p>Completely un-biased real world, real rider product reviews. Long term, short term and first impressions. We invite manufacturers and bike shops to send kit for real world testing and feedback from the followers of LakesMTB.</p>
-				</div>
-				<?php
-					$args = array( 'post_type' => 'routes', 'posts_per_page' => 3 );
-					$loop = new WP_Query( $args );
-						while ( $loop->have_posts() ) : $loop->the_post(); ?>
-							<div class='single-route'>
-					  				<h3><?php the_title(); ?></h3>
-					  				<?php the_post_thumbnail('shot-week'); ?>
-					  				<div class="stat-one"><p>Dst: <?php the_field('distance')?> miles</p></div>
-						  			<div class="stat-two"><p>Elevation (ft): <?php the_field('elevation')?></p></div>
-					  				<div class="tags"><?php the_tags(); ?></div>
-				  			</div>
-				<?php endwhile;
-				wp_reset_query(); ?>
-			</div>
-		</div>
-	</section>
-
-
-
-	
 
 	
 </article><!-- #post-## -->

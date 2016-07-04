@@ -185,6 +185,19 @@ if ( ! function_exists( 'lakesmtb_modify_contact_methods' ) ) :
 
 endif;
 
+/**
+ * Now you can upload GPX files...
+ *
+ */
+function gpx_upload($mime_types){
+
+    $mime_types['gpx'] = 'application/gpx+xml'; //Adding gpx extension
+
+    return $mime_types;
+}
+add_filter('upload_mimes', 'gpx_upload', 1, 1);
+
+
 // custom excerpt length
 function lakesmtb_custom_excerpt_length( $length ) {
    return 30;
