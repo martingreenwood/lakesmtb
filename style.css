@@ -1130,7 +1130,7 @@ a {
       padding-top: 2rem; }
 
 /*--------------------------------------------------------------
-## Routes Pages
+## Routes Page
 --------------------------------------------------------------*/
 /*============================
 =            Routes            =
@@ -1178,6 +1178,57 @@ a {
     #main #route-results .single-route .tags a {
       font-style: italic;
       color: #808285; }
+
+/*--------------------------------------------------------------
+## Contributor Page
+--------------------------------------------------------------*/
+/*============================
+=        Contributors        =
+============================*/
+#main #feature-bg {
+  background-size: cover;
+  height: 75vh;
+  background-position: center bottom; }
+  #main #feature-bg .container {
+    position: relative;
+    height: 100%; }
+    #main #feature-bg .container .copyright {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      color: #fff; }
+#main #contributors {
+  padding: 50px 0;
+  padding: 5rem 0; }
+  #main #contributors h2, #main #contributors .intro-para {
+    text-align: center; }
+  #main #contributors .intro-para {
+    padding: 0 25px;
+    padding: 0 2.5rem;
+    padding-bottom: 30px;
+    padding-bottom: 3rem; }
+  @media screen and (min-width: 960px) {
+    #main #contributors .contributor {
+      float: left;
+      display: block;
+      margin-right: 2.1276595745%;
+      width: 23.4042553191%; }
+      #main #contributors .contributor:last-child {
+        margin-right: 0; }
+      #main #contributors .contributor .route-hover {
+        position: relative; }
+        #main #contributors .contributor .route-hover .overlay {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.6);
+          opacity: 0;
+          transition: all 300ms ease-in-out; }
+          #main #contributors .contributor .route-hover .overlay:hover {
+            opacity: 1; }
+          #main #contributors .contributor .route-hover .overlay h3 {
+            text-align: center;
+            color: #fff; } }
 
 /*--------------------------------------------------------------
 ## Asides
