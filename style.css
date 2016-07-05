@@ -1207,6 +1207,9 @@ a {
     padding: 0 2.5rem;
     padding-bottom: 30px;
     padding-bottom: 3rem; }
+  #main #contributors .contributor .insta-handle {
+    font-size: 13px;
+    font-size: 1.3rem; }
   @media screen and (min-width: 960px) {
     #main #contributors .contributor {
       float: left;
@@ -1215,18 +1218,18 @@ a {
       width: 23.4042553191%; }
       #main #contributors .contributor:last-child {
         margin-right: 0; }
-      #main #contributors .contributor .route-hover {
+      #main #contributors .contributor .cont-hover {
         position: relative; }
-        #main #contributors .contributor .route-hover .overlay {
+        #main #contributors .contributor .cont-hover .overlay {
           position: absolute;
           width: 100%;
           height: 100%;
           background-color: rgba(0, 0, 0, 0.6);
           opacity: 0;
           transition: all 300ms ease-in-out; }
-          #main #contributors .contributor .route-hover .overlay:hover {
+          #main #contributors .contributor .cont-hover .overlay:hover {
             opacity: 1; }
-          #main #contributors .contributor .route-hover .overlay h3 {
+          #main #contributors .contributor .cont-hover .overlay h3 {
             text-align: center;
             color: #fff; } }
 

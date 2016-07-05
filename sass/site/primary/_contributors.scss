@@ -36,10 +36,14 @@
 
 		.contributor {
 
+			.insta-handle {
+				@include rem(font-size, 13px);
+			}
+
 			@include media ($large-screen-up) {
 				@include span-columns(3);
 
-				.route-hover {
+				.cont-hover {
 					position: relative;
 
 					.overlay {

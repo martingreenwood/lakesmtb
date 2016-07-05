@@ -34,14 +34,20 @@
 
 					// User Loop
 					if ( ! empty( $user_query->results ) ) {
-						foreach ( $user_query->results as $user ) {
-							echo '<div class="contributor">';
-							echo '<h4>' . $user->display_name . '</h4>';
-							echo '<p>@' . $user->instagram . '</p>';
-
-							echo get_avatar( $user ->ID, 280);
-							echo '</div>';
-						}
+						foreach ( $user_query->results as $user ) { ?>
+							<div class="contributor">
+								<h4> <?php echo $user->display_name ?></h4>
+								<p class="insta-handle">@ <?php echo $user->instagram ?></p>
+								<div class="cont-hover">
+									<div class="overlay">
+							            <div class="table"><div class="cell middle">
+								            <a href="<?php the_permalink(); ?>"><h3>View Full Profile</h3></a>
+								        </div></div>
+									</div>
+								<?php echo get_avatar( $user ->ID, 280); ?>
+								</div>
+							</div>
+						<?php }
 					} else {
 						echo 'No users found.';
 					}
