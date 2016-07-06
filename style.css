@@ -464,6 +464,9 @@ p {
   margin-bottom: 15px;
   margin-bottom: 1.5rem; }
 
+.uppercase {
+  text-transform: uppercase; }
+
 dfn, cite, em, i {
   font-style: italic; }
 
@@ -999,6 +1002,52 @@ a {
       width: 48.9361702128%; }
       .grid .half:last-child {
         margin-right: 0; } }
+.grid .third {
+  float: left;
+  display: block;
+  margin-right: 33.3333333333%;
+  width: 100%; }
+  .grid .third:last-child {
+    margin-right: 0; }
+  @media screen and (min-width: 680px) {
+    .grid .third {
+      float: left;
+      display: block;
+      margin-right: 2.8571428571%;
+      width: 31.4285714286%; }
+      .grid .third:last-child {
+        margin-right: 0; } }
+  @media screen and (min-width: 960px) {
+    .grid .third {
+      float: left;
+      display: block;
+      margin-right: 2.1276595745%;
+      width: 31.914893617%; }
+      .grid .third:last-child {
+        margin-right: 0; } }
+.grid .two-thirds {
+  float: left;
+  display: block;
+  margin-right: 33.3333333333%;
+  width: 100%; }
+  .grid .two-thirds:last-child {
+    margin-right: 0; }
+  @media screen and (min-width: 680px) {
+    .grid .two-thirds {
+      float: left;
+      display: block;
+      margin-right: 2.8571428571%;
+      width: 65.7142857143%; }
+      .grid .two-thirds:last-child {
+        margin-right: 0; } }
+  @media screen and (min-width: 960px) {
+    .grid .two-thirds {
+      float: left;
+      display: block;
+      margin-right: 2.1276595745%;
+      width: 65.9574468085%; }
+      .grid .two-thirds:last-child {
+        margin-right: 0; } }
 
 /*--------------------------------------------------------------
 ## Posts and pages
@@ -1263,8 +1312,8 @@ a {
 =        Single Article        =
 ============================*/
 #main #article-intro {
-  padding: 50px 0;
-  padding: 5rem 0; }
+  padding: 35px 0;
+  padding: 3.5rem 0; }
   @media screen and (min-width: 960px) {
     #main #article-intro .about-route, #main #article-intro .start-content {
       float: left;
@@ -1273,6 +1322,14 @@ a {
       width: 48.9361702128%; }
       #main #article-intro .about-route:last-child, #main #article-intro .start-content:last-child {
         margin-right: 0; } }
+  #main #article-intro .about-route a h5 {
+    margin-top: 30px;
+    margin-top: 3rem; }
+#main hr {
+  margin-top: 30px;
+  margin-top: 3rem;
+  margin-bottom: 0;
+  background-color: #c5c4c4; }
 
 /*--------------------------------------------------------------
 ## Contributor Page

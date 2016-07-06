@@ -35,8 +35,8 @@ get_header(); ?>
 					<div class="row">
 						<div class="about-route">
 							<h3><?php the_date(); ?></h3>
-							<p><?php the_author(); ?></p>
-							<h5>The Route</h5>
+							<p class="uppercase">By <?php the_author(); ?></p>
+							<h5>The Route:</h5>
 
 							<?php
 
@@ -108,8 +108,8 @@ get_header(); ?>
 			
 			</div>
 			<?php endif; ?>
-
-			<hr>
+			
+			<div class="container"><hr></div>
 
 			<section id="articles">
 			<div class="container">

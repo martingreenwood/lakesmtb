@@ -5,13 +5,27 @@
 #main {
 
 	#article-intro {
-		@include rem(padding, 50px 0);
+		@include rem(padding, 35px 0);
 
 		.about-route, .start-content {
 			@include media ($large-screen-up) {
 				@include span-columns(6);
 			}
 		}
+
+		.about-route {
+			a {
+				h5 {
+					@include rem(margin-top, 30px);
+				}
+			}
+		}
+	}
+
+	hr {
+		@include rem(margin-top, 30px);
+		margin-bottom: 0;
+		background-color: #c5c4c4;
 	}
 
 }

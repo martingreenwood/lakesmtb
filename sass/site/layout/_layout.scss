@@ -98,6 +98,29 @@
 
     }
 
+    .third {
+         @include span-columns(1);
 
+        @include media ($medium-screen-up) {
+            @include span-columns(3);
+        }
+
+         @include media ($large-screen-up) {
+            @include span-columns(4);
+        }
+    }
+
+    .two-thirds {
+         @include span-columns(1);
+
+        @include media ($medium-screen-up) {
+            @include span-columns(6);
+        }
+
+         @include media ($large-screen-up) {
+            @include span-columns(8);
+        }
+
+    }
 
 }
