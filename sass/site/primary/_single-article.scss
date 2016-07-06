@@ -1,0 +1,18 @@
+/*============================
+=        Single Article        =
+============================*/
+
+#main {
+
+	#article-intro {
+		@include rem(padding, 50px 0);
+
+		.about-route, .start-content {
+			@include media ($large-screen-up) {
+				@include span-columns(6);
+			}
+		}
+	}
+
+}
+

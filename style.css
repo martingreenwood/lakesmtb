@@ -438,6 +438,11 @@ h1, h2, h3, h4, h5, h6 {
   color: #231f20;
   font-weight: 400; }
 
+h5 {
+  font-size: 18px;
+  font-size: 1.8rem;
+  text-transform: uppercase; }
+
 h4 {
   font-size: 20px;
   font-size: 2rem; }
@@ -923,6 +928,78 @@ a {
   .cell.bottom {
     vertical-align: bottom; }
 
+.grid .column {
+  margin-bottom: 25px; }
+.grid .quarter {
+  float: left;
+  display: block;
+  margin-right: 33.3333333333%;
+  width: 100%; }
+  .grid .quarter:last-child {
+    margin-right: 0; }
+  @media screen and (min-width: 680px) {
+    .grid .quarter {
+      float: left;
+      display: block;
+      margin-right: 2.8571428571%;
+      width: 22.8571428571%; }
+      .grid .quarter:last-child {
+        margin-right: 0; } }
+  @media screen and (min-width: 960px) {
+    .grid .quarter {
+      float: left;
+      display: block;
+      margin-right: 2.1276595745%;
+      width: 23.4042553191%; }
+      .grid .quarter:last-child {
+        margin-right: 0; } }
+.grid .three-quarters {
+  float: left;
+  display: block;
+  margin-right: 33.3333333333%;
+  width: 100%; }
+  .grid .three-quarters:last-child {
+    margin-right: 0; }
+  @media screen and (min-width: 680px) {
+    .grid .three-quarters {
+      float: left;
+      display: block;
+      margin-right: 2.8571428571%;
+      width: 74.2857142857%; }
+      .grid .three-quarters:last-child {
+        margin-right: 0; } }
+  @media screen and (min-width: 960px) {
+    .grid .three-quarters {
+      float: left;
+      display: block;
+      margin-right: 2.1276595745%;
+      width: 74.4680851064%; }
+      .grid .three-quarters:last-child {
+        margin-right: 0; } }
+.grid .half {
+  float: left;
+  display: block;
+  margin-right: 33.3333333333%;
+  width: 100%; }
+  .grid .half:last-child {
+    margin-right: 0; }
+  @media screen and (min-width: 680px) {
+    .grid .half {
+      float: left;
+      display: block;
+      margin-right: 2.8571428571%;
+      width: 48.5714285714%; }
+      .grid .half:last-child {
+        margin-right: 0; } }
+  @media screen and (min-width: 960px) {
+    .grid .half {
+      float: left;
+      display: block;
+      margin-right: 2.1276595745%;
+      width: 48.9361702128%; }
+      .grid .half:last-child {
+        margin-right: 0; } }
+
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
@@ -1178,6 +1255,24 @@ a {
     #main #route-results .single-route .tags a {
       font-style: italic;
       color: #808285; }
+
+/*--------------------------------------------------------------
+## Blog Page
+--------------------------------------------------------------*/
+/*============================
+=        Single Article        =
+============================*/
+#main #article-intro {
+  padding: 50px 0;
+  padding: 5rem 0; }
+  @media screen and (min-width: 960px) {
+    #main #article-intro .about-route, #main #article-intro .start-content {
+      float: left;
+      display: block;
+      margin-right: 2.1276595745%;
+      width: 48.9361702128%; }
+      #main #article-intro .about-route:last-child, #main #article-intro .start-content:last-child {
+        margin-right: 0; } }
 
 /*--------------------------------------------------------------
 ## Contributor Page

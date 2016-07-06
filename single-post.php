@@ -30,17 +30,86 @@ get_header(); ?>
 				wp_reset_query(); ?>
 			</div>
 
-			<div class="container">
-				<?php
-				while ( have_posts() ) : the_post();
+			<section id="article-intro">
+				<div class="container">
+					<div class="row">
+						<div class="about-route">
+							<h3><?php the_date(); ?></h3>
+							<p><?php the_author(); ?></p>
+							<h5>The Route</h5>
 
-					get_template_part( 'template-parts/content', get_post_format() );
+							<?php
 
-					the_post_navigation();
+							$post_object = get_field('associated_route');
 
-				endwhile; // End of the loop.
-				?>
+							if( $post_object ): 
+
+								// override $post
+								$post = $post_object;
+								setup_postdata( $post ); 
+
+								the_field('waypoints'); ?>
+
+								<a href="<?php the_permalink(); ?>"><h5>More route info here</h5></a>
+							    
+							    <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+							<?php endif; ?>
+						</div>
+
+						<div class="start-content">
+							<h2><?php the_title(); ?></h2>
+							<?php the_content(); ?>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<?php
+			if( have_rows('feature_grid') ): ?>
+			<div class="container grid">
+		
+			    <?php while ( have_rows('feature_grid') ) : the_row(); ?>
+		
+				<div class="row">
+				
+					<?php
+		
+					    while ( have_rows('columns') ) : the_row();
+						$column_width = get_sub_field('width');
+						$column_content = get_sub_field('content');
+						?>
+		
+						<div class="column <?php echo $column_width; ?>">
+		
+						<?php if( have_rows('content') ):
+						    while ( have_rows('content') ) : the_row();
+		
+						        if( get_row_layout() == 'image' ):
+						        	get_template_part( 'partials/grid', 'image' );
+		
+						        elseif( get_row_layout() == 'video' ): 
+						        	get_template_part( 'partials/grid', 'feature-vid' );
+		
+						        elseif( get_row_layout() == 'text_box' ): 
+						        	get_template_part( 'partials/grid', 'text' );
+		
+						        endif;
+		
+						    endwhile;
+						endif; ?>
+							
+						</div>
+		
+					    <?php endwhile; ?>
+		
+				</div>
+		
+			    <?php endwhile; ?>
+			
 			</div>
+			<?php endif; ?>
+
+			<hr>
 
 			<section id="articles">
 			<div class="container">

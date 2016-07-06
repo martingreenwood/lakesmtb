@@ -52,3 +52,52 @@
         vertical-align: bottom;
     }
 }
+
+.grid {
+
+    .column {
+        margin-bottom: 25px;
+    }
+
+    .quarter {
+        @include span-columns(1);
+
+        @include media ($medium-screen-up) {
+            @include span-columns(2.25);
+        }
+
+         @include media ($large-screen-up) {
+            @include span-columns(3);
+        }
+
+    }    
+
+    .three-quarters {
+        @include span-columns(1);
+
+        @include media ($medium-screen-up) {
+            @include span-columns(6.75);
+        }
+
+         @include media ($large-screen-up) {
+            @include span-columns(9);
+        }
+
+    }
+
+    .half {
+        @include span-columns(1);
+
+        @include media ($medium-screen-up) {
+            @include span-columns(4.5);
+        }
+
+         @include media ($large-screen-up) {
+            @include span-columns(6);
+        }
+
+    }
+
+
+
+}
