@@ -100,12 +100,21 @@
                 	<div class="overlay">
                 		<div class="table"><div class="cell middle">
 	                		<ul>
-	                			<li><i class="fa fa-heart" aria-hidden="true"></i> <?php echo $ig_post->likes->count; ?></li>
-	                			<li><i class="fa fa-comment" aria-hidden="true"></i> <?php echo $ig_post->comments->count; ?></li>
+	                			<li>
+	                				<a href="<?php echo $ig_post->link; ?>">
+	                					<i class="fa fa-heart" aria-hidden="true"></i> <?php echo $ig_post->likes->count; ?>
+	                				</a>
+	                			</li>
+	                			<li>
+	                				<a href="<?php echo $ig_post->link; ?>">
+	                					<i class="fa fa-comment" aria-hidden="true"></i> <?php echo $ig_post->comments->count; ?>
+	                				</a>
+	                			</li>
 	                		</ul>
 	                	</div></div>
                 	</div>
-                    <img src="<?php echo $ig_post->images->standard_resolution->url ?>" width="<?php echo $ig_post->images->standard_resolution->width ?>" height="<?php echo $ig_post->images->standard_resolution->height ?>" alt="<?php echo $ig_post->caption->text ?>">
+                	<?php $ig_thumbnail = str_replace('s150x150/', 's320x320/', $ig_post->images->thumbnail->url); ?>
+                    <img src="<?php echo $ig_thumbnail; ?>" width="320" height="320" alt="">
                 </div>
                 <?php if ($counter++ == 8) break; ?>
                 <?php endforeach ?> 
