@@ -1,0 +1,280 @@
+{
+    "key": "group_5759382f66a19",
+    "title": "Grid Builder",
+    "fields": [
+        {
+            "key": "field_575938335126c",
+            "label": "",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Use the settings below to build your gridded parts.",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_5759385c5126d",
+            "label": "Row",
+            "name": "feature_grid",
+            "type": "repeater",
+            "instructions": "This is a row. This will house your columns. Add a row for every horizontal section of content you need. ",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": "",
+            "layout": "table",
+            "button_label": "Add Row",
+            "sub_fields": [
+                {
+                    "key": "field_5759395c5126e",
+                    "label": "Columns",
+                    "name": "columns",
+                    "type": "repeater",
+                    "instructions": "These are columns. These will house your content. Add a column for every section of content you need in this row. ",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "collapsed": "",
+                    "min": "",
+                    "max": "",
+                    "layout": "table",
+                    "button_label": "Add Column",
+                    "sub_fields": [
+                        {
+                            "key": "field_575939785126f",
+                            "label": "Width",
+                            "name": "width",
+                            "type": "select",
+                            "instructions": "Select your column width",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "quarter": "1\/4",
+                                "third": "1\/3",
+                                "half": "1\/2",
+                                "two-thirds": "2\/3",
+                                "three-quarters": "3\/4",
+                                "full": "1\/1"
+                            },
+                            "default_value": [],
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "ui": 0,
+                            "ajax": 0,
+                            "placeholder": "",
+                            "disabled": 0,
+                            "readonly": 0
+                        },
+                        {
+                            "key": "field_57593aeb51270",
+                            "label": "Content",
+                            "name": "content",
+                            "type": "flexible_content",
+                            "instructions": "Build your content.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "button_label": "Add Content",
+                            "min": "",
+                            "max": "",
+                            "layouts": [
+                                {
+                                    "key": "57593b2025419",
+                                    "name": "image",
+                                    "label": "Image",
+                                    "display": "row",
+                                    "sub_fields": [
+                                        {
+                                            "key": "field_57593bc951271",
+                                            "label": "Image",
+                                            "name": "image",
+                                            "type": "image",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "return_format": "array",
+                                            "preview_size": "thumbnail",
+                                            "library": "all",
+                                            "min_width": "",
+                                            "min_height": "",
+                                            "min_size": "",
+                                            "max_width": "",
+                                            "max_height": "",
+                                            "max_size": "",
+                                            "mime_types": ""
+                                        },
+                                        {
+                                            "key": "field_57595535f263c",
+                                            "label": "Image Size",
+                                            "name": "image_size",
+                                            "type": "select",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "choices": {
+                                                "thumbnail": "Thumbnail (150x150 CROPPED)",
+                                                "article-medium": "Medium (640x480 CROPPED)",
+                                                "large": "Large (1024 x 1024)",
+                                                "full": "Full Res"
+                                            },
+                                            "default_value": [],
+                                            "allow_null": 0,
+                                            "multiple": 0,
+                                            "ui": 0,
+                                            "ajax": 0,
+                                            "placeholder": "",
+                                            "disabled": 0,
+                                            "readonly": 0
+                                        },
+                                        {
+                                            "key": "field_57593c3d51272",
+                                            "label": "Image URL",
+                                            "name": "image_url",
+                                            "type": "page_link",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": [
+                                                [
+                                                    {
+                                                        "field": "field_575a7112e7165",
+                                                        "operator": "==",
+                                                        "value": "page"
+                                                    }
+                                                ]
+                                            ],
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "post_type": [
+                                                "page",
+                                                "locations",
+                                                "planning",
+                                                "developments",
+                                                "plots"
+                                            ],
+                                            "taxonomy": [],
+                                            "allow_null": 1,
+                                            "multiple": 1
+                                        }
+                                    ],
+                                    "min": "",
+                                    "max": ""
+                                },
+                                {
+                                    "key": "57593cc651276",
+                                    "name": "video",
+                                    "label": "Video",
+                                    "display": "row",
+                                    "sub_fields": [
+                                        {
+                                            "key": "field_57593cd651277",
+                                            "label": "Video",
+                                            "name": "dev_video",
+                                            "type": "oembed",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "width": "",
+                                            "height": ""
+                                        }
+                                    ],
+                                    "min": "",
+                                    "max": ""
+                                },
+                                {
+                                    "key": "57593d0b5127a",
+                                    "name": "text_box",
+                                    "label": "Text Box",
+                                    "display": "row",
+                                    "sub_fields": [
+                                        {
+                                            "key": "field_57593d135127b",
+                                            "label": "Text",
+                                            "name": "text",
+                                            "type": "wysiwyg",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "tabs": "all",
+                                            "toolbar": "full",
+                                            "media_upload": 1
+                                        }
+                                    ],
+                                    "min": "",
+                                    "max": ""
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 1,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1467805067
+}

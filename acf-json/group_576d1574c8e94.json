@@ -1,0 +1,96 @@
+{
+    "key": "group_576d1574c8e94",
+    "title": "Header Banner",
+    "fields": [
+        {
+            "key": "field_576d17109a591",
+            "label": "Enable Header Banner",
+            "name": "enable_header_banner",
+            "type": "true_false",
+            "instructions": "Check to enable the header banner:",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Enable",
+            "default_value": 0
+        },
+        {
+            "key": "field_576d15d19a58f",
+            "label": "Banner Image",
+            "name": "banner_image",
+            "type": "image",
+            "instructions": "Upload your banner image:",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_576d17109a591",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": 50,
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_576d16ee9a590",
+            "label": "Banner Link",
+            "name": "banner_link",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_576d17109a591",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": 50,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options-header"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1467805047
+}

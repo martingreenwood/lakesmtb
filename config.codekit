@@ -11,6 +11,94 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/acf-json\/group_5759382f66a19.json": {
+		"fileType": 524288,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/acf-json\/group_5759382f66a19.json",
+		"orderOutput": 0,
+		"outputAbbreviatedPath": "\/acf-json\/group_5759382f66a19-min.json",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1
+		},
+	"\/acf-json\/group_576d1574c8e94.json": {
+		"fileType": 524288,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/acf-json\/group_576d1574c8e94.json",
+		"orderOutput": 0,
+		"outputAbbreviatedPath": "\/acf-json\/group_576d1574c8e94-min.json",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1
+		},
+	"\/acf-json\/group_577143d2a18e4.json": {
+		"fileType": 524288,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/acf-json\/group_577143d2a18e4.json",
+		"orderOutput": 0,
+		"outputAbbreviatedPath": "\/acf-json\/group_577143d2a18e4-min.json",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1
+		},
+	"\/acf-json\/group_5772742dce60f.json": {
+		"fileType": 524288,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/acf-json\/group_5772742dce60f.json",
+		"orderOutput": 0,
+		"outputAbbreviatedPath": "\/acf-json\/group_5772742dce60f-min.json",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1
+		},
+	"\/acf-json\/group_5774ddfbd7789.json": {
+		"fileType": 524288,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/acf-json\/group_5774ddfbd7789.json",
+		"orderOutput": 0,
+		"outputAbbreviatedPath": "\/acf-json\/group_5774ddfbd7789-min.json",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1
+		},
+	"\/acf-json\/group_5775296d2d769.json": {
+		"fileType": 524288,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/acf-json\/group_5775296d2d769.json",
+		"orderOutput": 0,
+		"outputAbbreviatedPath": "\/acf-json\/group_5775296d2d769-min.json",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1
+		},
+	"\/acf-json\/group_577bbc8f07da2.json": {
+		"fileType": 524288,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/acf-json\/group_577bbc8f07da2.json",
+		"orderOutput": 0,
+		"outputAbbreviatedPath": "\/acf-json\/group_577bbc8f07da2-min.json",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1
+		},
+	"\/acf-json\/group_577bbcf4e01c7.json": {
+		"fileType": 524288,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/acf-json\/group_577bbcf4e01c7.json",
+		"orderOutput": 0,
+		"outputAbbreviatedPath": "\/acf-json\/group_577bbcf4e01c7-min.json",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1
+		},
 	"\/archive.php": {
 		"fileType": 8192,
 		"ignore": 0,
