@@ -101,12 +101,12 @@
                 		<div class="table"><div class="cell middle">
 	                		<ul>
 	                			<li>
-	                				<a href="<?php echo $ig_post->link; ?>">
+	                				<a target="_blank" href="<?php echo $ig_post->link; ?>">
 	                					<i class="fa fa-heart" aria-hidden="true"></i> <?php echo $ig_post->likes->count; ?>
 	                				</a>
 	                			</li>
 	                			<li>
-	                				<a href="<?php echo $ig_post->link; ?>">
+	                				<a target="_blank" href="<?php echo $ig_post->link; ?>">
 	                					<i class="fa fa-comment" aria-hidden="true"></i> <?php echo $ig_post->comments->count; ?>
 	                				</a>
 	                			</li>
