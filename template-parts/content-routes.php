@@ -43,7 +43,7 @@
 						$loop = new WP_Query( $args );
 							while ( $loop->have_posts() ) : $loop->the_post(); ?>
 								<div class='single-route'>
-									<h4><?php the_title(); ?></h4>
+									<a href="<?php the_permalink(); ?>"><h4><?php the_title(); ?></h4></a>
 									<p class="gpx-link">
 										<?php 
 

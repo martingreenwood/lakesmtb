@@ -98,6 +98,12 @@
 			@include rem(padding-right, 10px);
 			@include rem(padding-top, 5px);
 		}
+
+		.photo-week {
+			h3 {
+				text-transform: none;
+			}
+		}
 	}
 
 	#insta {
@@ -144,8 +150,11 @@
 
 						li {
 							display: inline-block;
-							color: $white;
 							@include rem(margin-right, 10px);
+
+							a {
+								color: $white;
+							}
 
 							&:last-of-type {
 								margin-right: 0;
