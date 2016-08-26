@@ -139,11 +139,6 @@ function lakesmtb_scripts() {
 add_action( 'wp_enqueue_scripts', 'lakesmtb_scripts' );
 
 /**
- * Implement the Custom Header feature.
-
-require get_template_directory() . '/inc/custom-header.php'; */
-
-/**
  * Custom options page for this theme.
  */
 require get_template_directory() . '/inc/options.php';
