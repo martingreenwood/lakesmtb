@@ -16,17 +16,11 @@
 
 			h1 {
 				margin-top: -36px;
-				@include rem(font-size, 45px);
+				@include rem(font-size, 48px);
 				color: $white;
 				position: absolute;
     			top: 20%;
     			max-width: 300px;
-    			line-height: normal;
-
-    			@include media ($xl-screen-up) {
-    				@include rem(font-size, 48px);
-    				line-height: inherit;
-    			}
 			}
 
 			.tagline {
@@ -67,20 +61,12 @@
 
 		.fa-chevron-left {
 			left: 0;
-			@include rem(padding-left, 15px);
-
-			@include media ($xl-screen-up) {
-				@include rem(padding-left, 50px);
-			}
+			@include rem(padding-left, 50px);
 		}
 
 		.fa-chevron-right {
 			right: 0;
-			@include rem(padding-right, 15px);
-
-			@include media ($xl-screen-up) {
-				@include rem(padding-right, 50px);
-			}
+			@include rem(padding-right, 50px);
 		}
 	}
 
@@ -136,17 +122,33 @@
 
 			.days {
 
-				.slick-arrow {
-					display: none !important;
-				}
-
 				.column {
 					text-align: center;
 					border-right: 1px solid #ccc;
-					height: 138px;
+					//height: 138px;
+					width: 25%;
+					float: left;
+					margin-bottom: 20px;
 
-					> div  {
+					&:first-of-type, &:last-of-type {
+						display: none;
+					}
+
+					&:nth-child(5) {
+						border-right: 0;
+					}
+
+					.fa-chevron-left {
+						transform: rotate(90deg);
+					}
+				
+					.fa-chevron-right {
+						transform: rotate(90deg);
+					}
+
+					.slick-slide {
 						margin: 10px 0;
+						outline: none;
 					}
 
 					span {
@@ -258,12 +260,6 @@
 
 		.photo-week {
 		}
-
-		.photo-week {
-			h3 {
-				text-transform: none;
-			}
-		}
 	}
 
 	#insta {
@@ -310,14 +306,11 @@
 
 						li {
 							display: inline-block;
+							color: $white;
 							@include rem(margin-right, 10px);
 
 							a {
-<<<<<<< HEAD
 								color: white;
-=======
-								color: $white;
->>>>>>> origin/master
 							}
 
 							&:last-of-type {

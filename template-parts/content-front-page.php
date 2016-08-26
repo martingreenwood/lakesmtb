@@ -198,7 +198,7 @@ $user_result = json_decode($user_result);
 
 							<?php foreach ($days as $day ):
 
-								if( date("D", $day->dt) != $day_zero): ?>
+								//if( date("D", $day->dt) != $day_zero): ?>
 
 									<div class="<?php echo date("D", $day->dt); ?>">
 										<span class="day"><?php echo date("D", $day->dt); ?></span>
@@ -207,7 +207,7 @@ $user_result = json_decode($user_result);
 										<span class="icn"><?php echo weather_icon($day->weather[0]->icon); ?></span>
 									</div>
 
-								<?php endif; 
+								<?php //endif; 
 
 							endforeach; ?>
 

@@ -3337,18 +3337,12 @@ a {
   margin-top: -27px; }
 #main .slides .slick-slide h1 {
   margin-top: -36px;
-  font-size: 45px;
-  font-size: 4.5rem;
+  font-size: 48px;
+  font-size: 4.8rem;
   color: #fff;
   position: absolute;
   top: 20%;
-  max-width: 300px;
-  line-height: normal; }
-  @media screen and (min-width: 1350px) {
-    #main .slides .slick-slide h1 {
-      font-size: 48px;
-      font-size: 4.8rem;
-      line-height: inherit; } }
+  max-width: 300px; }
 #main .slides .slick-slide .tagline {
   color: #fff;
   font-size: 18px;
@@ -3379,20 +3373,12 @@ a {
   font-size: 25px; }
 #main .slides .fa-chevron-left {
   left: 0;
-  padding-left: 15px;
-  padding-left: 1.5rem; }
-  @media screen and (min-width: 1350px) {
-    #main .slides .fa-chevron-left {
-      padding-left: 50px;
-      padding-left: 5rem; } }
+  padding-left: 50px;
+  padding-left: 5rem; }
 #main .slides .fa-chevron-right {
   right: 0;
-  padding-right: 15px;
-  padding-right: 1.5rem; }
-  @media screen and (min-width: 1350px) {
-    #main .slides .fa-chevron-right {
-      padding-right: 50px;
-      padding-right: 5rem; } }
+  padding-right: 50px;
+  padding-right: 5rem; }
 #main #featured-widgets {
   background-color: #f5f5f5;
   padding: 50px 0;
@@ -3405,7 +3391,6 @@ a {
       width: 31.914893617%; }
       #main #featured-widgets .twitter:last-child, #main #featured-widgets .weather:last-child, #main #featured-widgets .photo-week:last-child {
         margin-right: 0; } }
-<<<<<<< HEAD
   #main #featured-widgets .weather {
     font-size: 14px;
     padding: 0 30px; }
@@ -3428,14 +3413,23 @@ a {
       #main #featured-widgets .weather .temp span:last-of-type {
         font-size: 42px;
         margin-left: 20px; }
-    #main #featured-widgets .weather .days .slick-arrow {
-      display: none !important; }
     #main #featured-widgets .weather .days .column {
       text-align: center;
       border-right: 1px solid #ccc;
-      height: 138px; }
-      #main #featured-widgets .weather .days .column > div {
-        margin: 10px 0; }
+      width: 25%;
+      float: left;
+      margin-bottom: 20px; }
+      #main #featured-widgets .weather .days .column:first-of-type, #main #featured-widgets .weather .days .column:last-of-type {
+        display: none; }
+      #main #featured-widgets .weather .days .column:nth-child(5) {
+        border-right: 0; }
+      #main #featured-widgets .weather .days .column .fa-chevron-left {
+        transform: rotate(90deg); }
+      #main #featured-widgets .weather .days .column .fa-chevron-right {
+        transform: rotate(90deg); }
+      #main #featured-widgets .weather .days .column .slick-slide {
+        margin: 10px 0;
+        outline: none; }
       #main #featured-widgets .weather .days .column span {
         width: 100%;
         display: block; }
@@ -3501,15 +3495,6 @@ a {
     #main #featured-widgets .twitter ul li {
       display: inline-block;
       margin-right: 15px; }
-=======
-  #main #featured-widgets .twitter {
-    padding-right: 10px;
-    padding-right: 1rem;
-    padding-top: 5px;
-    padding-top: 0.5rem; }
-  #main #featured-widgets .photo-week h3 {
-    text-transform: none; }
->>>>>>> origin/master
 #main #insta {
   padding: 50px 0;
   padding: 5rem 0; }
@@ -3556,14 +3541,11 @@ a {
         text-align: center; }
         #main #insta .instafeed .ig-card .overlay ul li {
           display: inline-block;
+          color: #fff;
           margin-right: 10px;
           margin-right: 1rem; }
           #main #insta .instafeed .ig-card .overlay ul li a {
-<<<<<<< HEAD
             color: white; }
-=======
-            color: #fff; }
->>>>>>> origin/master
           #main #insta .instafeed .ig-card .overlay ul li:last-of-type {
             margin-right: 0; }
 #main #lakes-routes {

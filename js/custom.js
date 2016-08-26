@@ -50,10 +50,14 @@ $(function(){
 
 $(function(){
   
-	$('.days').slick({
-		slidesToShow: 4,
+	$('.column').slick({
+		slidesToShow: 1,
 		slidesToScroll: 1,
+		initialSlide: 4,
 		autoplay: false,
+		infinite: false,
+		vertical: true,
+		verticalSwiping: true,
 		nextArrow: '<i class="fa fa-chevron-right"></i>',
   		prevArrow: '<i class="fa fa-chevron-left"></i>',
 	});
