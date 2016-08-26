@@ -29,6 +29,7 @@
 
 .container {
     @include outer-container;
+    @include rem(padding, 0 20px);
 }
 .row {
     @include row;

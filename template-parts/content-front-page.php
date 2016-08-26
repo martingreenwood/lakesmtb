@@ -277,12 +277,12 @@ $user_result = json_decode($user_result);
                 		<div class="table"><div class="cell middle">
 	                		<ul>
 	                			<li>
-	                				<a href="<?php echo $ig_post->link; ?>">
+	                				<a target="_blank" href="<?php echo $ig_post->link; ?>">
 	                					<i class="fa fa-heart" aria-hidden="true"></i> <?php echo $ig_post->likes->count; ?>
 	                				</a>
 	                			</li>
 	                			<li>
-	                				<a href="<?php echo $ig_post->link; ?>">
+	                				<a target="_blank" href="<?php echo $ig_post->link; ?>">
 	                					<i class="fa fa-comment" aria-hidden="true"></i> <?php echo $ig_post->comments->count; ?>
 	                				</a>
 	                			</li>
@@ -310,7 +310,7 @@ $user_result = json_decode($user_result);
 					$loop = new WP_Query( $args );
 						while ( $loop->have_posts() ) : $loop->the_post(); ?>
 							<div class='single-route'>
-					  				<h3><?php the_title(); ?></h3>
+					  				<a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3></a>
 					  				<?php the_post_thumbnail('shot-week'); ?>
 					  				<div class="stat-one"><p>Dst: <?php the_field('distance')?> miles</p></div>
 						  			<div class="stat-two"><p>Elevation (ft): <?php the_field('elevation')?></p></div>
@@ -334,7 +334,7 @@ $user_result = json_decode($user_result);
 					$loop = new WP_Query( $args );
 						while ( $loop->have_posts() ) : $loop->the_post(); ?>
 							<div class='single-article'>
-					  				<h3><?php the_title('\'', '\''); ?></h3>
+					  				<a href="<?php the_permalink(); ?>"><h3><?php the_title('\'', '\''); ?></h3></a>
 					  				<p>Words and photos by <?php the_author(); ?> - @<?php the_author_meta('instagram'); ?></p>
 					  				<?php the_post_thumbnail('article'); ?>
 					  				<div class="custom-byline"><?php the_field('custom_byline')?></div>
