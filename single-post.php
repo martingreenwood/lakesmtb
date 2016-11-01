@@ -35,25 +35,28 @@ get_header(); ?>
 					<div class="row">
 						<div class="about-route">
 							<h3><?php the_date(); ?></h3>
-							<p class="uppercase">By <?php the_author(); ?></p>
-							<h5>The Route:</h5>
+							<p class="uppercase author">By <?php the_author(); ?></p>
 
 							<?php
+								if ( function_exists( 'sharing_display' ) ) {
+								    sharing_display( '', true );
+								}
+							?>
 
-							$post_object = get_field('associated_route');
+							<div class="route">
+								<h5>The Route:</h5>
+								<?php
+								$post_object = get_field('associated_route');
 
-							if( $post_object ): 
-
-								// override $post
-								$post = $post_object;
-								setup_postdata( $post ); 
-
-								the_field('waypoints'); ?>
-
+								if( $post_object ): 
+									$post = $post_object;
+									setup_postdata( $post ); 
+									the_field('waypoints'); ?>
 								<a href="<?php the_permalink(); ?>"><h5>More route info here</h5></a>
-							    
-							    <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
-							<?php endif; ?>
+							    <?php wp_reset_postdata();
+								endif; ?>
+							</div>
+							
 						</div>
 
 						<div class="start-content">

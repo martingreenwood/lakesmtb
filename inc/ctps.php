@@ -16,6 +16,8 @@
  * @package lakesmtb
  */
 
+global $cpts;
+
 $cpts = array(
 	
 	// Routes
@@ -24,7 +26,17 @@ $cpts = array(
 		'Route',
 		'Routes',
 		'dashicons-location-alt', 
-		array('title','editor','thumbnail'),
+		array('title','editor','thumbnail','author'),
+		true,
+	),
+
+	// Reviews
+	$routes = array(
+		'reviews',
+		'Review',
+		'Reviews',
+		'dashicons-thumbs-up', 
+		array('title','editor','thumbnail','author'),
 		true,
 	),
 );

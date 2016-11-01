@@ -258,7 +258,7 @@ $user_result = json_decode($user_result);
 			<h2>#Lakesmtb on Instagram</h2>
 			
 			<div class="display-cabinet">
-				<?php 
+			<?php 
 				foreach ($result->data as $ig_dc):
 				$ig_large = str_replace('s150x150/', 's640x640/', $ig_dc->images->thumbnail->url);
 				?>
@@ -310,11 +310,13 @@ $user_result = json_decode($user_result);
 					$loop = new WP_Query( $args );
 						while ( $loop->have_posts() ) : $loop->the_post(); ?>
 							<div class='single-route'>
-					  				<a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3></a>
-					  				<?php the_post_thumbnail('shot-week'); ?>
-					  				<div class="stat-one"><p>Dst: <?php the_field('distance')?> miles</p></div>
-						  			<div class="stat-two"><p>Elevation (ft): <?php the_field('elevation')?></p></div>
-					  				<div class="tags"><?php the_tags(); ?></div>
+					  				<a href="<?php the_permalink(); ?>">
+					  					<h3><?php the_title(); ?></h3>
+					  					<?php the_post_thumbnail('shot-week'); ?>
+					  					<div class="stat-one"><p>Dst: <?php the_field('distance')?> miles</p></div>
+						  				<div class="stat-two"><p>Elevation (ft): <?php the_field('elevation')?></p></div>
+					  					<div class="tags"><?php the_tags(); ?></div>
+					  				</a>
 				  			</div>
 				<?php endwhile;
 				wp_reset_query(); ?>
@@ -334,11 +336,13 @@ $user_result = json_decode($user_result);
 					$loop = new WP_Query( $args );
 						while ( $loop->have_posts() ) : $loop->the_post(); ?>
 							<div class='single-article'>
-					  				<a href="<?php the_permalink(); ?>"><h3><?php the_title('\'', '\''); ?></h3></a>
-					  				<p>Words and photos by <?php the_author(); ?> - @<?php the_author_meta('instagram'); ?></p>
-					  				<?php the_post_thumbnail('article'); ?>
-					  				<div class="custom-byline"><?php the_field('custom_byline')?></div>
-					  				<div class="excerpt"><?php the_excerpt(); ?></div>
+					  				<a href="<?php the_permalink(); ?>">
+					  					<h3><?php the_title(); ?></h3>
+					  					<p>Words and photos by <?php the_author(); ?> - @<?php the_author_meta('instagram'); ?></p>
+					  					<?php the_post_thumbnail('article'); ?>
+					  					<div class="custom-byline"><?php the_field('custom_byline')?></div>
+					  					<div class="excerpt"><?php the_excerpt(); ?></div>
+					  				</a>
 				  			</div>
 					<?php endwhile;
 					wp_reset_query(); ?>
@@ -346,9 +350,30 @@ $user_result = json_decode($user_result);
 		</div>
 	</section>
 
-
-
-	
+	<section id="reviews">
+		<div class="container">
+			<div class="row">
+				<div class="articles-intro">
+					<h2>Real Rider Kit Reviews</h2>
+					<p>Completely un-biased real world, real rider product reviews. Long term, short term and first impressions. We invite manufacturers and bike shops to send kit for real world testing and feedback from the followers of LakesMTB.</p>
+				</div>
+					<?php
+					$args = array( 'post_type' => 'reviews', 'posts_per_page' => 4 );
+					$loop = new WP_Query( $args );
+						while ( $loop->have_posts() ) : $loop->the_post(); ?>
+							<div class='single-article'>
+					  				<a href="<?php the_permalink(); ?>"><h3>
+					  					<?php the_title(); ?></h3>
+					  					<p>By <?php the_author(); ?></p>
+					  					<?php the_post_thumbnail('thumbnail'); ?>
+					  					<p class="custom-byline"><?php the_field('review_intro')?></p>
+									</a>
+				  			</div>
+					<?php endwhile;
+					wp_reset_query(); ?>
+			</div>
+		</div>
+	</section>	
 
 	
 </article><!-- #post-## -->

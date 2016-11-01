@@ -50,7 +50,7 @@ $(function(){
 
 $(function(){
   
-	$('.column').slick({
+	$('.days .column').slick({
 		slidesToShow: 1,
 		slidesToScroll: 1,
 		initialSlide: 4,
