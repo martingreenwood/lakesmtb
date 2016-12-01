@@ -27,3 +27,25 @@ function lakesmtb_body_classes( $classes ) {
 	return $classes;
 }
 add_filter( 'body_class', 'lakesmtb_body_classes' );
+
+
+/**
+ * GET XML / JSON / DATA
+ */
+function get_data($data_url)
+{
+    $curl = curl_init();
+    $options = array(
+        CURLOPT_URL => $data_url,
+        CURLOPT_RETURNTRANSFER => 1,
+    );
+    curl_setopt_array($curl, $options);
+    $string = curl_exec($curl);
+    return $string;
+}
+
+function cached_and_valid($file) {
+  $expired_time = time() - 10800; //3 hours
+  return file_exists($file) && filemtime($file) > $expired_time;
+}
+

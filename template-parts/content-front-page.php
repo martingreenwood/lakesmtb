@@ -28,30 +28,61 @@ function fetchData($url){
 // Pulls and parses data.
 $result = fetchData("https://api.instagram.com/v1/users/{$userid}/media/recent/?access_token={$accessToken}");
 $result = json_decode($result);
-
 $user_result = fetchData("https://api.instagram.com/v1/users/{$userid}/?access_token={$accessToken}");
 $user_result = json_decode($user_result);
 
 
+// Met Office
+
+// Needs LocationID: lake-district
+// datatype : xml or json
+// http://datapoint.metoffice.gov.uk/public/data/txt/wxfcs/mountainarea/json/sitelist
+
+// sites
+// txt/wxfcs/mountainarea/json/sitelist	
+
+// siyte with location id present
+// txt/wxfcs/mountainarea/json/siteid
+
+// SITES
+if(cached_and_valid(get_stylesheet_directory() . '/cache/sites.txt')){
+	$sites_data = file_get_contents(get_stylesheet_directory() . '/cache/sites.txt');
+	$sites_obj = json_decode($sites_data);
+} else {
+	$sites_data = get_data('http://datapoint.metoffice.gov.uk/public/data/txt/wxfcs/mountainarea/json/sitelist?key='.MOKEY);
+	file_put_contents(get_stylesheet_directory() . '/cache/sites.txt', $sites_data);
+	$sites_obj = json_decode($sites_data);
+}
+
+// Lake Distrct 102
+if(cached_and_valid(get_stylesheet_directory() . '/cache/lakes-weather.txt')){
+	$lakes_data = file_get_contents(get_stylesheet_directory() . '/cache/lakes-weather.txt');
+	$lakes_obj = json_decode($lakes_data);
+} else {
+	$lakes_data = get_data('http://datapoint.metoffice.gov.uk/public/data/txt/wxfcs/mountainarea/json/102?key='.MOKEY);
+	file_put_contents(get_stylesheet_directory() . '/cache/lakes-weather.txt', $lakes_data);
+	$lakes_obj = json_decode($lakes_data);
+}
+
 ?>
+
+<pre>
+	<?php print_r($lakes_obj); ?>
+</pre>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class='slides'>
-		<?php
-		$args = array( 'post_type' => 'routes', 'posts_per_page' => 5 );
-		$loop = new WP_Query( $args );
-		while ( $loop->have_posts() ) : $loop->the_post(); ?>
+	<?php $images = get_field('slider'); if( $images ): ?>
+	<?php foreach( $images as $image ): ?>
 		<div class='slide'>'
-			<?php the_post_thumbnail('slider'); ?>
+			<img src="<?php echo $image['sizes']['slider']; ?>" alt="<?php echo $image['alt']; ?>" />
 			<div class="container">
-				<h1><?php the_title(); ?></h1>
-				<p class="tagline">Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br> Etiam interdum felis volutpat nulla rhoncus, in pretium purus mattis. </p>
-				<p class="hashtag">#lakesmtb</p>
-				<p class="copyright">Photo: @tristantinn</p>
+				<p class="hashtag"><?php echo $image['title']; ?></p>
+				<p class="copyright"><?php echo $image['caption']; ?></p>
 			</div>
 		</div>
-		<?php endwhile;
-		wp_reset_query(); ?>
+	<?php endforeach; ?>
+	<?php endif; ?>
 	</div>
 
 	<section id="featured-widgets">
@@ -158,6 +189,7 @@ $user_result = json_decode($user_result);
 						} else {
 							$location = '2655049';
 						}
+
 
 						// call weather
 						$session = curl_init('http://api.openweathermap.org/data/2.5/forecast?id='.$location.'&appid=e3db0ccaeae256f11a5dfb6fadf3de49');

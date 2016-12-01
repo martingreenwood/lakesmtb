@@ -10,22 +10,19 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	
 	<div class='slides'>
-		<?php
-			$args = array( 'post_type' => 'routes', 'posts_per_page' => 5 );
-			$loop = new WP_Query( $args );
-				while ( $loop->have_posts() ) : $loop->the_post(); ?>
-					<div class='slide'>'
-			  			<?php the_post_thumbnail('slider'); ?>
-			  			<div class="container">
-			  				<h1><?php the_title(); ?></h1>
-			  				<p class="tagline">Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br> Etiam interdum felis volutpat nulla rhoncus, in pretium purus mattis. </p>
-			  				<p class="hashtag">#lakesmtb</p>
-			  				<p class="copyright">Photo: @tristantinn</p>
-			  			</div>
-		  			</div>
-		<?php endwhile;
-		wp_reset_query(); ?>
+	<?php $images = get_field('slider'); if( $images ): ?>
+	<?php foreach( $images as $image ): ?>
+		<div class='slide'>'
+			<img src="<?php echo $image['sizes']['slider']; ?>" alt="<?php echo $image['alt']; ?>" />
+			<div class="container">
+				<p class="hashtag"><?php echo $image['title']; ?></p>
+				<p class="copyright"><?php echo $image['caption']; ?></p>
+			</div>
+		</div>
+	<?php endforeach; ?>
+	<?php endif; ?>
 	</div>
 
 	<section id="route-search">
