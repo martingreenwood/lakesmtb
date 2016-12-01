@@ -1,0 +1,91 @@
+{
+    "key": "group_583c6c75e1739",
+    "title": "Slider",
+    "fields": [
+        {
+            "default_value": 1,
+            "message": "Use slider?",
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "key": "field_5840015ea2b29",
+            "label": "Enable Slider",
+            "name": "enable_slider",
+            "type": "true_false",
+            "instructions": "Check to enable the slider - un unchecked this will fall back to the feature image box.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "library": "all",
+            "min": "",
+            "max": "",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "insert": "append",
+            "key": "field_583c6c7b85c21",
+            "label": "",
+            "name": "slider",
+            "type": "gallery",
+            "instructions": "Add \/ remove slides.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5840015ea2b29",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "preview_size": "thumbnail"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "routes"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1480602212
+}

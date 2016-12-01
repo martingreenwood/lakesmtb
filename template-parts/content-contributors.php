@@ -10,7 +10,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
+	<?php if (get_field('enable_slider')): ?>
 	<div class='slides'>
 	<?php $images = get_field('slider'); if( $images ): ?>
 	<?php foreach( $images as $image ): ?>
@@ -24,7 +24,7 @@
 	<?php endforeach; ?>
 	<?php endif; ?>
 	</div>
-
+	<?php else : ?>
 	<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'slider' ); ?>
     <div id="feature-bg" style="background-image: url('<?php echo $image[0]; ?>')">
         <div class="container">
@@ -34,6 +34,7 @@
 			</div>
 		</div>
     </div>
+	<?php endif; ?>
 
 	<section id="contributors">
 		<div class="container">
