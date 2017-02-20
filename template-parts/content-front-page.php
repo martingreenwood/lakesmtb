@@ -142,144 +142,89 @@ if(cached_and_valid(get_stylesheet_directory() . '/cache/lakes-weather.txt')){
 
 					<?php
 
-						function fahrenheit_to_celsius($given_value)
-						{
-							$celsius=5/9*($given_value-32);
-							return $celsius ;
-						}
+					function fahrenheit_to_celsius($given_value)
+					{
+						$celsius=5/9*($given_value-32);
+						return $celsius ;
+					}
 
-						function celsius_to_fahrenheit($given_value)
-						{
-							$fahrenheit=$given_value*9/5+32;
-							return $fahrenheit ;
-						}
+					function celsius_to_fahrenheit($given_value)
+					{
+						$fahrenheit=$given_value*9/5+32;
+						return $fahrenheit ;
+					}
 
-						function kelvin_to_celsius($temp) 
-						{
-							if ( !is_numeric($temp) ) { return false; }
-							return round(($temp - 273.15));
-						}
+					function kelvin_to_celsius($temp) 
+					{
+						if ( !is_numeric($temp) ) { return false; }
+						return round(($temp - 273.15));
+					}
 
-						function weather_icon($typeicon) {
+					function weather_icon($typeicon) {
 
-							if ($typeicon == "01d"):
-								$weatherIcon = '<i class="wi wi-day-sunny"></i>';
-							elseif ($typeicon == "01n"):
-								$weatherIcon = '<i class="wi wi-night-clear"></i>';
-							
-							elseif ($typeicon == "02d"):
-								$weatherIcon = '<i class="wi wi-day-cloudy"></i>';
-							elseif ($typeicon == "02n"):
-								$weatherIcon = '<i class="wi wi-night-partly-cloudy"></i>';
+						if ($typeicon == "01d"):
+							$weatherIcon = '<i class="wi wi-day-sunny"></i>';
+						elseif ($typeicon == "01n"):
+							$weatherIcon = '<i class="wi wi-night-clear"></i>';
+						
+						elseif ($typeicon == "02d"):
+							$weatherIcon = '<i class="wi wi-day-cloudy"></i>';
+						elseif ($typeicon == "02n"):
+							$weatherIcon = '<i class="wi wi-night-partly-cloudy"></i>';
 
-							elseif ($typeicon == "03d" || $typeicon == "03n"):
-								$weatherIcon = '<i class="wi wi-cloud"></i>';
-							elseif ($typeicon == "04d" || $typeicon == "04n"):
-								$weatherIcon = '<i class="wi wi-cloudy"></i>';
-							elseif ($typeicon == "09d" || $typeicon == "09n"):
-								$weatherIcon = '<i class="wi wi-showers"></i>';
-							elseif ($typeicon == "10d"):
-								$weatherIcon = '<i class="wi wi-rain"></i>';
-							elseif ($typeicon == "10n"):
-								$weatherIcon = '<i class="wi wi-night-alt-rain"></i>';
-							elseif ($typeicon == "11d" || $typeicon == "11n"):
-								$weatherIcon = '<i class="wi wi-thunderstorm"></i>';
-							elseif ($typeicon == "13d" || $typeicon == "13n"):
-								$weatherIcon = '<i class="wi wi-day-fog"></i>';
-							elseif ($typeicon == "50d" || $typeicon == "50n"):
-								$weatherIcon = '<i class="wi wi-night-fog"></i>';
+						elseif ($typeicon == "03d" || $typeicon == "03n"):
+							$weatherIcon = '<i class="wi wi-cloud"></i>';
+						elseif ($typeicon == "04d" || $typeicon == "04n"):
+							$weatherIcon = '<i class="wi wi-cloudy"></i>';
+						elseif ($typeicon == "09d" || $typeicon == "09n"):
+							$weatherIcon = '<i class="wi wi-showers"></i>';
+						elseif ($typeicon == "10d"):
+							$weatherIcon = '<i class="wi wi-rain"></i>';
+						elseif ($typeicon == "10n"):
+							$weatherIcon = '<i class="wi wi-night-alt-rain"></i>';
+						elseif ($typeicon == "11d" || $typeicon == "11n"):
+							$weatherIcon = '<i class="wi wi-thunderstorm"></i>';
+						elseif ($typeicon == "13d" || $typeicon == "13n"):
+							$weatherIcon = '<i class="wi wi-day-fog"></i>';
+						elseif ($typeicon == "50d" || $typeicon == "50n"):
+							$weatherIcon = '<i class="wi wi-night-fog"></i>';
 
-							else:
-								$weatherIcon = '<i class="wi wi-alien"></i>';
+						else:
+							$weatherIcon = '<i class="wi wi-alien"></i>';
 
-							endif;
+						endif;
 
-							return $weatherIcon;
-						}
+						return $weatherIcon;
+					}
 
-						if(isset($_GET['loc'])) {
-							$location = $_GET['loc'];
-						} else {
-							$location = '2655049';
-						}
+					$days = $lakes_obj->report->Forecast_Day0->WeatherPPN->WxPeriod;
 
 
-						// call weather
-						$session = curl_init('http://api.openweathermap.org/data/2.5/forecast?id='.$location.'&appid=e3db0ccaeae256f11a5dfb6fadf3de49');
-						curl_setopt($session, CURLOPT_RETURNTRANSFER, true);
-						$json = curl_exec($session);
-						$weatherObj =  json_decode($json);
 
-						$cities_file    = file_get_contents(get_stylesheet_directory_uri() . '/assets/cities.txt');
-						$rows        = explode("\n", $cities_file);
-						array_shift($rows);
+					?>
+					<div class="weather_box">
 
-						// set days array
-						$days = $weatherObj->list;
+						<header class="clear">
+							<span>Today</span>
+						</header>
 
-						// set today for ref
-						$day_zero = date("D", strtotime("now"));
-						$day_one = date("D", strtotime("+1 day"));
-						$day_two = date("D", strtotime("+2 days"));
-						$day_three = date("D", strtotime("+3 days"));
-						$day_four = date("D", strtotime("+4 days"));
-						$day_five = date("D", strtotime("+5 days"));
+						<section class="temp clear">
+						</section>
 
-						?>
+						<section class="days days clear">
 
-						<div class="weather_box">
+						<?php foreach ($days as $day ): ?>
 
-							<header class="clear">
-								<span>Today</span>
-								<span><?php echo $weatherObj->city->name; ?></span>
-							</header>
+							<div class="day">
+								<span class="time"><?php echo $day->Period; ?></span>
+								<span class="icn"><?php echo $day->Weather; ?></span>
+								<span class="tmp"><?php echo $day->Probability; ?></span>
+							</div>
 
-							<section class="temp clear">
-								<span><?php echo kelvin_to_celsius($weatherObj->list[0]->main->temp); ?>&deg;C</span>
-								<span><?php echo weather_icon($weatherObj->list[0]->weather[0]->icon); ?></span>
-							</section>
+						<?php endforeach; ?>
 
-							<section class="days clear">
-
-							<?php foreach ($days as $day ):
-
-								//if( date("D", $day->dt) != $day_zero): ?>
-
-									<div class="<?php echo date("D", $day->dt); ?>">
-										<span class="day"><?php echo date("D", $day->dt); ?></span>
-										<span class="time"><?php echo date("H:i A", $day->dt); ?></span>
-										<span class="tmp"><?php echo kelvin_to_celsius($day->main->temp); ?>&deg;C</span>
-										<span class="icn"><?php echo weather_icon($day->weather[0]->icon); ?></span>
-									</div>
-
-								<?php //endif; 
-
-							endforeach; ?>
-
-							</section>
-
-							<section class="search_box">
-
-								<select id="cities" class="cities" name="cities" data-placeholder="Search for a location" style="width:100%;">
-									<option value=""></option>
-									<?php
-										foreach($rows as $row => $data)
-										{
-										    //get row data
-										    $row_data = explode('^', $data);
-
-										    $info[$row]['id']	= $row_data[0];
-										    $info[$row]['nm']	= $row_data[1];
-
-										    echo '<option value="'.$info[$row]['id'].'">'.$info[$row]['nm'].'</option>';
-										}
-									?>
-								</select>
-
-							</section>
-
-						</div>
-
+						</section>
+					</div>
 				</div>
 
 				<div class="photo-week">

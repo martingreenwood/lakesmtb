@@ -24,39 +24,18 @@ $(function(){
 	});
 });
 
-$(function(){
-
-	// Collect all children
-	var $children = $(".days").children("div");
-
-	// Collect all unique class names
-	var classNames = $children.map(function() {
-	    return this.className;
-	});
-	classNames = $.unique(classNames.get());
-
-	// Find all children with same class and wrap them
-	$.each(classNames, function(i, className) {
-	    $children.filter(function() {
-	        return $(this).hasClass(className);
-	    }).wrapAll("<div class='column' />");
-	});
-
-});
-
 /*=============================
 =            Slick            =
 =============================*/
 
 $(function(){
   
-	$('.days .column').slick({
+	$('.days').slick({
 		slidesToShow: 1,
 		slidesToScroll: 1,
-		initialSlide: 4,
+		initialSlide: 2,
 		autoplay: false,
 		infinite: false,
-		vertical: true,
 		verticalSwiping: true,
 		nextArrow: '<i class="fa fa-chevron-right"></i>',
   		prevArrow: '<i class="fa fa-chevron-left"></i>',
